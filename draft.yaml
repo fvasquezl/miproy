@@ -1,0 +1,23 @@
+models:
+  Bin:
+    name: string
+    slug: string unique
+    code: int
+    relationships:
+      belongsToMany: Product
+
+  Product:
+    name: string
+    slug: string unique
+    concentration: string
+    qty: integer
+    category_id: id
+    user_id: id
+    relationships:
+      belongsToMany: Bin
+
+  Category:
+    name: string
+    slug: string unique
+    relationships:
+      hasMany: Product
